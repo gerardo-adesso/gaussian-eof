@@ -2,16 +2,21 @@ Lean toolchain: leanprover/lean4:v4.35.0-rc4
 Mathlib commit: 49fd9dee36e7bbf345fe7981d2de6aeeb591f75b (8 Oct 2026)
 
 == Clean build (lake build) ==
-✔ [0/163] Ran Thm2Cert:extraDep
-⚠ [2229/2235] Built Thm2Cert.MatrixLemma (9.6s)
-⚠ [2230/2235] Built Thm2Cert.Reduction (4.6s)
-⚠ [2231/2235] Built Thm2Cert.Identity (4.8s)
-ℹ [2232/2235] Built Thm2Cert.Comparison (12s)
-ℹ [2233/2235] Built Thm2Cert.Derivation (3.1s)
-ℹ [2234/2235] Built Thm2Cert (1.6s)
-✔ [2235/2235] Ran Thm2Cert/Thm2Cert:default
-Build completed successfully (2235 jobs).
-real	0m33.205s
+⚠ [2293/2307] Built Thm2Cert.MatrixLemma (11s)
+⚠ [2294/2307] Built Thm2Cert.Reduction (4.7s)
+⚠ [2295/2307] Built Thm2Cert.Identity (4.8s)
+⚠ [2296/2307] Built Thm1Cert.Defect (6.1s)
+⚠ [2297/2307] Built Thm1Cert.Compression (6.6s)
+⚠ [2298/2307] Built Thm1Cert.Closure (7.7s)
+ℹ [2299/2307] Built Thm2Cert.Comparison (20s)
+⚠ [2300/2307] Built Thm1Cert.Assembly (5.6s)
+ℹ [2301/2307] Built Thm2Cert.Derivation (5.4s)
+ℹ [2302/2307] Built Thm2Cert (1.6s)
+ℹ [2304/2307] Built Thm1Cert.Upsilon (2.4s)
+ℹ [2305/2307] Built Thm1Cert.Corollaries (2.2s)
+ℹ [2306/2307] Built Thm1Cert (1.7s)
+Build completed successfully (2307 jobs).
+real	0m49.849s
 (only remaining warnings: Mathlib's generic 'consider adding module' notices)
 
 == Axiom audit (lake env lean Certificate.lean) ==
@@ -40,16 +45,43 @@ real	0m33.205s
 'Thm2Cert.tmsv_value' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Thm2Cert.energy_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Thm2Cert.thm2_of_minprinciple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.drop_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.defect_inequality_tsum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.pava_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.entropy_le_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.compression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.H_thermal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.F_thermal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.Fmoments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.brk_of_upsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.thm1_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.theorem1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.theorem1_upsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.theorem1_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.entropy_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.theorem1_endpoint_state' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.fixed_entanglement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.fixed_entanglement_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.separability_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
 
-No sorry / admit / axiom declarations in Thm2Cert/*.lean (1836 lines).
+No sorry / admit / axiom declarations in Thm1Cert/*.lean, Thm2Cert/*.lean (3455 lines).
 
 == SHA-256 ==
+661c65779ee328d771311577f005439b775219c2e58092bc6e42a6701420de2a  Thm1Cert.lean
 86a3d914234d083870e9033a3f2a6502821ce7614638457b6cf3baf2f4914911  Thm2Cert.lean
-b2d3d45a295b136a60b17340ca964628a5791ba9a6bc7c5ff2e0effca727f7cf  Certificate.lean
+d6b7f8c68a8a86d6d10280e2e02621fd3950e03176343add15840101e1e8226a  Certificate.lean
+fc5f133ca7b63b949bc8d302ed1c3921dae7659df8e1339c4ccea75db15a3fdf  Thm1Cert/Assembly.lean
+665bfd8f35f90cefe67362b7e6ba7d9ccdb7434b165a3b8d5b2970cc0b9e93e7  Thm1Cert/Closure.lean
+379302da07b64d2b10525243350e322d3f2b5b8014a61e4d4ae72bb27f1e4f4c  Thm1Cert/Compression.lean
+eabc7cd2ab81821133023c7695e61ba54c57229934704dc985d98a8b4132a22a  Thm1Cert/Corollaries.lean
+d91b7f411dbd614c300cd0203bda7f10f0c18668bddfeaa495fccd10c63b4a70  Thm1Cert/Defect.lean
+99d3f7ccb3b53d9584c08c49d812f127e9ff4599566567ce94f6211117db185f  Thm1Cert/Upsilon.lean
 17cddd2c66982fdc705e5593c2f9d10719f5b1559ecbad9684e8cc5d64bde661  Thm2Cert/Comparison.lean
 8c08ff7ada7a1b6188643d207fd00c94e4643c5b81f8d0910e2e9c07d71ede7f  Thm2Cert/Derivation.lean
 dfdfc8f1d40ba675859a8e2a8ebc9507f366dd91ca778a47c7fc986b4bb9e520  Thm2Cert/Identity.lean
 d444f89ef18c12792308cf0e2d40fcb15fca44b22992042c76c5d156453f62a9  Thm2Cert/MatrixLemma.lean
 74cb74257d090f4f2c87d2ecaa22a74e24589ce711643345a28d13713e0978ef  Thm2Cert/Reduction.lean
-89ad06bc4390342de18218fee4be2439961d29af84a105d1c7158401e2985bf6  lakefile.toml
+64f165e6350db97d4cea9f0067ba844de19005330fd4ec06c3b87764e56b5538  lakefile.toml
 8f89aa44fccdb1a0b6cc768c7c9f54b94cd40e47a08d582f82d1235f13075cf7  lean-toolchain

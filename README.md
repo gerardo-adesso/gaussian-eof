@@ -4,9 +4,10 @@ Lean 4 certificate for G. Adesso, *Optimality of Gaussian entanglement of format
 [arXiv:2608.01909v3](https://arxiv.org/abs/2608.01909v3).
 
 Machine-checked proofs (Lean 4 + Mathlib) of every finite-dimensional, algebraic and
-real-analytic step in the proof of Theorem 2 (Supplemental Material, "Proof of Theorem 2").
-Nothing uses `sorry`, and each listed theorem depends only on Lean's three standard axioms
-(`propext`, `Classical.choice`, `Quot.sound`). See `VERIFICATION.txt`.
+real-analytic step in the proofs of **Theorem 1** (affine extremality) and **Theorem 2**
+(many-pair affine EPR inequality) in the Supplemental Material. Nothing uses `sorry`, and each
+listed theorem depends only on Lean's three standard axioms (`propext`, `Classical.choice`,
+`Quot.sound`). See `VERIFICATION.txt`.
 
 A printable summary with all certified statements, the verification record and the full
 source is in [`certificate.pdf`](certificate.pdf).
@@ -15,11 +16,50 @@ source is in [`certificate.pdf`](certificate.pdf).
 ```
 # requires elan: https://github.com/leanprover/elan
 lake exe cache get            # prebuilt Mathlib
-lake build                    # ~35 s after the cache
+lake build                    # ~1 min after the cache
 lake env lean Certificate.lean   # axiom audit
 ```
 
-## Certified
+## Theorem 1 (`Thm1Cert/`)
+
+**Theorem S1, singular-value defect inequality** (`Defect.lean`), in the Schmidt-basis matrix
+model G_t(C) = Σ_{ij} |t c_i X_ij − c_j Y_ij|²:
+- `drop_lemma` (S:drop), `pointwise` (S:pointwise, cases i < j, i = j, i > j);
+- `defect_inequality_tsum`: Σ_n (n+1) d_n² ≤ G_t(C), d_n = (t c_n − c_{n+1})₊.
+
+**Theorem S2, geometric isotonic compression** (`Compression.lean`):
+- `pava_exists`: pool-adjacent-violators, as an existence proof by strong induction on the
+  number of level breaks (mass preserved, prefix sums raised, drop energy not increased);
+- `entropy_le_of_prefix`: Schur concavity of the entropy under prefix domination;
+- `compression`: z_{n+1} ≤ t z_n, H(z²) ≤ H(c²), 𝓕_t(z) ≤ Σ (n+1)(t c_n − c_{n+1})₊².
+
+**Thermal closure** (`Closure.lean`, `Upsilon.lean`):
+- `H_thermal`, `F_thermal` (S:thermalF);
+- `support` (S:support): s = q minimises 𝓔(s) + λ_{q,t}(t−s)²/(1−s²) on [0, 1), via the
+  monotonicity of Λ_t (S:LambdaMon);
+- `Fmoments`, `Ups_eq` (S:Fmoments, S:UpsilonF), and `brk_of_upsilon`.
+
+**Assembly** (`Assembly.lean`, `Upsilon.lean`, `Corollaries.lean`):
+- `thm1_spectrum`: H(c²) + λ Σ (n+1) d_n² ≥ 𝓔(q) + λ(t−q)²/(1−q²) for every decreasing
+  spectrum with finite entropy. Finite and infinite rank are both handled; the infinite case
+  goes through the limit of normalised truncations;
+- `theorem1`, `theorem1_upsilon`: **E(ψ) + λ_{q,t}[D_t(ψ) − d_t(q)] ≥ 𝓔(q)** for 0 < q < t ≤ 1;
+- `theorem1_endpoint_state` (q = t), `fixed_entanglement`, `fixed_entanglement_endpoint`,
+  `separability_criterion` (S:fixedE for 0 ≤ q ≤ t), `theorem1_limit`, `entropy_truncation`.
+
+**Inputs for Theorem 1:**
+- The Beigi–Rahimi-Keshari meta log-Sobolev theorem: Υ is minimised on thermal states.
+  It is used only for diagonal states of finite rank (`BRKUpsilon`). The moment formulas
+  Tr(ρ_z a†a) = n̄ and Tr(√ρ_z a √ρ_z a†) = T_z are also inputs.
+- Fock-space facts:
+  - E(ψ) = H(c²) and D_t = G_t + 1 − t²;
+  - the matrix model X = U†aU, Y = V†aV in Schmidt bases indexed by ℕ, which exist for every
+    finite-rank state;
+  - the index identities from [a, a†] = 1;
+  - for general infinite-rank states, the convergence G_t(C^(L)) → G_t(C) of normalised
+    Schmidt truncations, after which `theorem1_limit` applies.
+
+## Theorem 2 (`Thm2Cert/`)
 
 **Lemma S5, all of it** (`MatrixLemma.lean`, `Comparison.lean`). Hypotheses: α, β, κ, w > 0,
 κ² ≤ αβ, κ cosh w − w = (α+β)/2; q = e^{−w}.
@@ -47,7 +87,7 @@ Schmidt-basis matrix model, for every finite Schmidt spectrum with kernel direct
 - `tmsv_value`, `energy_identity`, `thm2_of_minprinciple`: the equality value, and the step
   from the minimum principle to Theorem 2.
 
-## Inputs (stated, not derived)
+**Inputs for Theorem 2:**
 - Operator facts on Fock space: the canonical commutation relations, which give [T,O], the sum
   rules (S:wccr) and the matrix model with finitely many relevant directions. Also the TMSV
   moments and the identity λD̂_t = T + λ.
@@ -57,5 +97,5 @@ Schmidt-basis matrix model, for every finite Schmidt spectrum with kernel direct
 - The infinite-dimensional analysis: infinite Schmidt rank, Lemma S6, regularization, and
   existence of minimizers.
 
-These need operator theory on infinite-dimensional Hilbert spaces: unbounded ladder operators,
-trace-class operators and von Neumann entropy. Mathlib does not yet provide these.
+The inputs need operator theory on infinite-dimensional Hilbert spaces: unbounded ladder
+operators, trace-class operators and von Neumann entropy. Mathlib does not yet provide these.
