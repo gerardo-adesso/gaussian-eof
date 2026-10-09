@@ -8,6 +8,9 @@ real-analytic step in the proof of Theorem 2 (Supplemental Material, "Proof of T
 Nothing uses `sorry`, and each listed theorem depends only on Lean's three standard axioms
 (`propext`, `Classical.choice`, `Quot.sound`). See `VERIFICATION.txt`.
 
+A printable summary with all certified statements, the verification record and the full
+source is in [`certificate.pdf`](certificate.pdf).
+
 ## Checking it
 ```
 # requires elan: https://github.com/leanprover/elan
