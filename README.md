@@ -9,8 +9,12 @@ real-analytic step in the proofs of **Theorem 1** (affine extremality) and **The
 listed theorem depends only on Lean's three standard axioms (`propext`, `Classical.choice`,
 `Quot.sound`). See `VERIFICATION.txt`.
 
-A printable summary with all certified statements, the verification record and the full
-source is in [`certificate.pdf`](certificate.pdf).
+Printable certificates, each with every certified statement, the verification record and the
+full source:
+- Theorem 1: [`Thm1Cert/certificate_theorem1.pdf`](Thm1Cert/certificate_theorem1.pdf)
+- Theorem 2: [`Thm2Cert/certificate_theorem2.pdf`](Thm2Cert/certificate_theorem2.pdf)
+
+They are regenerated with `python3 tools/make_certificate_pdf.py` (XeLaTeX).
 
 ## Checking it
 ```
@@ -20,7 +24,7 @@ lake build                    # ~1 min after the cache
 lake env lean Certificate.lean   # axiom audit
 ```
 
-## Theorem 1 (`Thm1Cert/`)
+## Theorem 1 (`Thm1Cert/`, [certificate](Thm1Cert/certificate_theorem1.pdf))
 
 **Theorem S1, singular-value defect inequality** (`Defect.lean`), in the Schmidt-basis matrix
 model G_t(C) = Σ_{ij} |t c_i X_ij − c_j Y_ij|²:
@@ -59,7 +63,7 @@ model G_t(C) = Σ_{ij} |t c_i X_ij − c_j Y_ij|²:
   - for general infinite-rank states, the convergence G_t(C^(L)) → G_t(C) of normalised
     Schmidt truncations, after which `theorem1_limit` applies.
 
-## Theorem 2 (`Thm2Cert/`)
+## Theorem 2 (`Thm2Cert/`, [certificate](Thm2Cert/certificate_theorem2.pdf))
 
 **Lemma S5, all of it** (`MatrixLemma.lean`, `Comparison.lean`). Hypotheses: α, β, κ, w > 0,
 κ² ≤ αβ, κ cosh w − w = (α+β)/2; q = e^{−w}.
