@@ -1,0 +1,10 @@
+name = "Thm2Cert"
+defaultTargets = ["Thm2Cert"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "49fd9dee36e7bbf345fe7981d2de6aeeb591f75b"
+
+[[lean_lib]]
+name = "Thm2Cert"

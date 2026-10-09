@@ -1,0 +1,55 @@
+Lean toolchain: leanprover/lean4:v4.35.0-rc4
+Mathlib commit: 49fd9dee36e7bbf345fe7981d2de6aeeb591f75b (8 Oct 2026)
+
+== Clean build (lake build) ==
+✔ [0/163] Ran Thm2Cert:extraDep
+⚠ [2229/2235] Built Thm2Cert.MatrixLemma (9.6s)
+⚠ [2230/2235] Built Thm2Cert.Reduction (4.6s)
+⚠ [2231/2235] Built Thm2Cert.Identity (4.8s)
+ℹ [2232/2235] Built Thm2Cert.Comparison (12s)
+ℹ [2233/2235] Built Thm2Cert.Derivation (3.1s)
+ℹ [2234/2235] Built Thm2Cert (1.6s)
+✔ [2235/2235] Ran Thm2Cert/Thm2Cert:default
+Build completed successfully (2235 jobs).
+real	0m33.205s
+(only remaining warnings: Mathlib's generic 'consider adding module' notices)
+
+== Axiom audit (lake env lean Certificate.lean) ==
+'Thm2Cert.lemmaS5_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.lemmaS5_pd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.lemmaS5_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.lemmaS5_null' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.lemmaS5_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.lemmaS5_complex_pd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.lemmaS5_complex_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.hyp_nonvacuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.gam_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.lemmaS5_gamma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.lemmaS5_gamma_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.Q1_from_euler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.Q2_from_euler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.mainid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.mainid_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.rigidity_multi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.stationary_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.calib_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.lam_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.hyp_of_lam' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.tmsv_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.energy_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm2Cert.thm2_of_minprinciple' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+No sorry / admit / axiom declarations in Thm2Cert/*.lean (1836 lines).
+
+== SHA-256 ==
+86a3d914234d083870e9033a3f2a6502821ce7614638457b6cf3baf2f4914911  Thm2Cert.lean
+b2d3d45a295b136a60b17340ca964628a5791ba9a6bc7c5ff2e0effca727f7cf  Certificate.lean
+17cddd2c66982fdc705e5593c2f9d10719f5b1559ecbad9684e8cc5d64bde661  Thm2Cert/Comparison.lean
+8c08ff7ada7a1b6188643d207fd00c94e4643c5b81f8d0910e2e9c07d71ede7f  Thm2Cert/Derivation.lean
+dfdfc8f1d40ba675859a8e2a8ebc9507f366dd91ca778a47c7fc986b4bb9e520  Thm2Cert/Identity.lean
+d444f89ef18c12792308cf0e2d40fcb15fca44b22992042c76c5d156453f62a9  Thm2Cert/MatrixLemma.lean
+74cb74257d090f4f2c87d2ecaa22a74e24589ce711643345a28d13713e0978ef  Thm2Cert/Reduction.lean
+89ad06bc4390342de18218fee4be2439961d29af84a105d1c7158401e2985bf6  lakefile.toml
+8f89aa44fccdb1a0b6cc768c7c9f54b94cd40e47a08d582f82d1235f13075cf7  lean-toolchain
