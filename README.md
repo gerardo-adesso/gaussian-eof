@@ -1,7 +1,7 @@
 # gaussian-eof
 
-Proof verification for Gaussian optimality and additivity of the entanglement of formation of two-mode Gaussian states.
-
+Lean 4 certificate for G. Adesso, *Optimality of Gaussian entanglement of formation*,
+[arXiv:2608.01909v3](https://arxiv.org/abs/2608.01909v3).
 
 Machine-checked proofs (Lean 4 + Mathlib) of every finite-dimensional, algebraic and
 real-analytic step in the proof of Theorem 2 (Supplemental Material, "Proof of Theorem 2").
