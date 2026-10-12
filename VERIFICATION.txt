@@ -20,6 +20,26 @@ real	0m49.849s
 (only remaining warnings: Mathlib's generic 'consider adding module' notices)
 
 == Axiom audit (lake env lean Certificate.lean) ==
+'Thm1Cert.drop_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.defect_inequality_tsum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.pava_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.entropy_le_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.compression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.H_thermal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.F_thermal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.Fmoments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.brk_of_upsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.thm1_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.theorem1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.theorem1_upsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.theorem1_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.entropy_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.theorem1_endpoint_state' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.fixed_entanglement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.fixed_entanglement_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Thm1Cert.separability_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Thm2Cert.lemmaS5_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Thm2Cert.lemmaS5_pd' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Thm2Cert.lemmaS5_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -45,33 +65,13 @@ real	0m49.849s
 'Thm2Cert.tmsv_value' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Thm2Cert.energy_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Thm2Cert.thm2_of_minprinciple' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.drop_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.defect_inequality_tsum' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.pava_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.entropy_le_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.compression' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.H_thermal' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.F_thermal' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.support' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.Fmoments' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.brk_of_upsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.thm1_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.theorem1' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.theorem1_upsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.theorem1_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.entropy_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.theorem1_endpoint_state' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.fixed_entanglement' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.fixed_entanglement_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Thm1Cert.separability_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
 
 No sorry / admit / axiom declarations in Thm1Cert/*.lean, Thm2Cert/*.lean (3455 lines).
 
 == SHA-256 ==
 661c65779ee328d771311577f005439b775219c2e58092bc6e42a6701420de2a  Thm1Cert.lean
 86a3d914234d083870e9033a3f2a6502821ce7614638457b6cf3baf2f4914911  Thm2Cert.lean
-d6b7f8c68a8a86d6d10280e2e02621fd3950e03176343add15840101e1e8226a  Certificate.lean
+ee4f02be0b7969568f97efab31dd3f48955a18305c409e349b85609683d2172b  Certificate.lean
 fc5f133ca7b63b949bc8d302ed1c3921dae7659df8e1339c4ccea75db15a3fdf  Thm1Cert/Assembly.lean
 665bfd8f35f90cefe67362b7e6ba7d9ccdb7434b165a3b8d5b2970cc0b9e93e7  Thm1Cert/Closure.lean
 379302da07b64d2b10525243350e322d3f2b5b8014a61e4d4ae72bb27f1e4f4c  Thm1Cert/Compression.lean

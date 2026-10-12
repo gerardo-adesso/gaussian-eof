@@ -1,39 +1,9 @@
-import Thm2Cert
 import Thm1Cert
+import Thm2Cert
 
 /-! Axiom audit: every certified statement depends only on Lean's three standard axioms
 (`propext`, `Classical.choice`, `Quot.sound`). -/
 
--- Lemma S5: positivity and kernel
-#print axioms Thm2Cert.lemmaS5_psd
-#print axioms Thm2Cert.lemmaS5_pd
-#print axioms Thm2Cert.lemmaS5_kernel
-#print axioms Thm2Cert.lemmaS5_null
-#print axioms Thm2Cert.lemmaS5_complex
-#print axioms Thm2Cert.lemmaS5_complex_pd
-#print axioms Thm2Cert.lemmaS5_complex_kernel
-#print axioms Thm2Cert.hyp_nonvacuous
--- Lemma S5: comparison M ≥ γK with explicit γ
-#print axioms Thm2Cert.gam_pos
-#print axioms Thm2Cert.lemmaS5_gamma
-#print axioms Thm2Cert.lemmaS5_gamma_complex
--- Eqs. (S:defects), (S:Q12), (S:mainid)
-#print axioms Thm2Cert.defects
-#print axioms Thm2Cert.Q1_from_euler
-#print axioms Thm2Cert.Q2_from_euler
-#print axioms Thm2Cert.mainid
-#print axioms Thm2Cert.mainid_general
--- Rigidity
-#print axioms Thm2Cert.rigidity
-#print axioms Thm2Cert.rigidity_multi
-#print axioms Thm2Cert.stationary_rigidity
--- Reduction to Theorem 2
-#print axioms Thm2Cert.calib_iff
-#print axioms Thm2Cert.lam_pos
-#print axioms Thm2Cert.hyp_of_lam
-#print axioms Thm2Cert.tmsv_value
-#print axioms Thm2Cert.energy_identity
-#print axioms Thm2Cert.thm2_of_minprinciple
 -- Theorem 1: defect inequality (Theorem S1)
 #print axioms Thm1Cert.drop_lemma
 #print axioms Thm1Cert.pointwise
@@ -58,3 +28,34 @@ import Thm1Cert
 #print axioms Thm1Cert.fixed_entanglement
 #print axioms Thm1Cert.fixed_entanglement_endpoint
 #print axioms Thm1Cert.separability_criterion
+
+-- Theorem 2: Lemma S5: positivity and kernel
+#print axioms Thm2Cert.lemmaS5_psd
+#print axioms Thm2Cert.lemmaS5_pd
+#print axioms Thm2Cert.lemmaS5_kernel
+#print axioms Thm2Cert.lemmaS5_null
+#print axioms Thm2Cert.lemmaS5_complex
+#print axioms Thm2Cert.lemmaS5_complex_pd
+#print axioms Thm2Cert.lemmaS5_complex_kernel
+#print axioms Thm2Cert.hyp_nonvacuous
+-- Theorem 2: Lemma S5: comparison M ≥ γK with explicit γ
+#print axioms Thm2Cert.gam_pos
+#print axioms Thm2Cert.lemmaS5_gamma
+#print axioms Thm2Cert.lemmaS5_gamma_complex
+-- Theorem 2: Eqs. (S:defects), (S:Q12), (S:mainid)
+#print axioms Thm2Cert.defects
+#print axioms Thm2Cert.Q1_from_euler
+#print axioms Thm2Cert.Q2_from_euler
+#print axioms Thm2Cert.mainid
+#print axioms Thm2Cert.mainid_general
+-- Theorem 2: Rigidity
+#print axioms Thm2Cert.rigidity
+#print axioms Thm2Cert.rigidity_multi
+#print axioms Thm2Cert.stationary_rigidity
+-- Theorem 2: Reduction to Theorem 2
+#print axioms Thm2Cert.calib_iff
+#print axioms Thm2Cert.lam_pos
+#print axioms Thm2Cert.hyp_of_lam
+#print axioms Thm2Cert.tmsv_value
+#print axioms Thm2Cert.energy_identity
+#print axioms Thm2Cert.thm2_of_minprinciple
